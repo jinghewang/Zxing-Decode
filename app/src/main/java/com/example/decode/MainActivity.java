@@ -40,11 +40,11 @@ public class MainActivity extends Activity {
 			public void handleDecode(Bundle bundle) {
 				//扫描成功后调用
 				startActivity(new Intent(MainActivity.this, ResultActivity.class).putExtras(bundle));
-				
 			}
 		};
-		TranslateAnimation animation = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT,
-				0.9f);
+
+		//animation
+		TranslateAnimation animation = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT,				0.9f);
 		animation.setDuration(4500);
 		animation.setRepeatCount(-1);
 		animation.setRepeatMode(Animation.RESTART);
