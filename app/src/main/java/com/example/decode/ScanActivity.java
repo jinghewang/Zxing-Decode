@@ -14,8 +14,9 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class ScanActivity extends Activity {
 
 
 	private SurfaceView scanPreview;//相机
@@ -42,10 +43,11 @@ public class MainActivity extends Activity {
 			@Override
 			public void handleDecode(Bundle bundle) {
 				//扫描成功后调用
-				//startActivity(new Intent(MainActivity.this, ResultActivity.class).putExtras(bundle));
+				//startActivity(new Intent(ScanActivity.this, ResultActivity.class).putExtras(bundle));
 
 				String result = bundle.getString(QrcodeDecode.BARCODE_RESULT);
 				Log.e(Tag, result);
+				//Toast.makeText(ScanActivity.this,result,Toast.LENGTH_LONG);
 				qd.finish();
 			}
 		};
