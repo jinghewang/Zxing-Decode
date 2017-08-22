@@ -6,6 +6,7 @@ import com.rbj.zxing.decode.QrcodeDecode;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.SurfaceView;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,6 +24,8 @@ public class MainActivity extends Activity {
 	
 	private QrcodeDecode qd;
 
+	private String Tag = "HBD--";
+
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
@@ -39,7 +42,11 @@ public class MainActivity extends Activity {
 			@Override
 			public void handleDecode(Bundle bundle) {
 				//扫描成功后调用
-				startActivity(new Intent(MainActivity.this, ResultActivity.class).putExtras(bundle));
+				//startActivity(new Intent(MainActivity.this, ResultActivity.class).putExtras(bundle));
+
+				String result = bundle.getString(QrcodeDecode.BARCODE_RESULT);
+				Log.e(Tag, result);
+				qd.finish();
 			}
 		};
 
