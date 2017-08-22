@@ -48,6 +48,12 @@ public class ScanActivity extends Activity {
 				String result = bundle.getString(QrcodeDecode.BARCODE_RESULT);
 				Log.e(Tag, result);
 				//Toast.makeText(ScanActivity.this,result,Toast.LENGTH_LONG);
+				Intent intent = new Intent();
+				Bundle b = new Bundle();
+				b.putString("result",result);
+				intent.putExtras(b);
+				this.setResult(0,intent);
+
 				qd.finish();
 			}
 		};
