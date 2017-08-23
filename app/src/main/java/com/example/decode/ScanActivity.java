@@ -25,7 +25,7 @@ public class ScanActivity extends Activity {
 	
 	private QrcodeDecode qd;
 
-	private String Tag = "HBD--";
+	private String Tag = "HBD-2-";
 
 	@Override
 	public void onCreate(Bundle icicle) {
